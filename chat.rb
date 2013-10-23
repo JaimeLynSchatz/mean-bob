@@ -7,7 +7,7 @@ computer = "Who you callin' 'Computer', Chump? This isn't the Enterprise. My nam
 
 puts "..."
 response = gets.chomp()
-while !response.include? 'omputer'
+while !response.include? 'omputer' or !response.include? 'orry'
 	puts "Shhh!"
 	sleep 0.5
 	puts "Don't say #{response} now! I'm working here."
