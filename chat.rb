@@ -1,5 +1,5 @@
 require_relative 'bob_says'
-
+include BS
 
 nasty = [
 	"Who you callin' 'Computer', Chump? This isn't the Enterprise.",
@@ -34,15 +34,16 @@ puts "..."
 response = gets.chomp().downcase
 while !response.include? 'uit' or !response.include? 'xit'
 
-	if bob_says.include? response
-		puts bob_says[response]
+	if @@bob_says.include? response
+		puts @@bob_says[response]
 	else
 		response_words = response.split(" ")
 		print "Oh, '", response_words[-1], "' you say?\n"
 		# add those keywords to bob_says
+	end
 	
 	response = gets.chomp().downcase
-	end
+	puts "**** response = #{response} *******" #debugging
 	
 end #while loop
 
