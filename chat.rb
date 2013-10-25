@@ -33,10 +33,18 @@ end
 puts "..."
 response = gets.chomp().downcase
 while !response.include? "quit" and !response.include? "exit"
-
-	if @@bob_says.include? response
-		puts @@bob_says[response]
-	else
+	
+	understood = false
+	
+	response_split = response.split(" ")
+	for word in response_split
+		if @@bob_says.include? word
+			puts @@bob_says[word]
+			understood = true
+		end
+	end
+	
+	if !understood
 		response_words = response.split(" ")
 		print "Oh, '", response_words[-1], "' you say?\n"
 		# add those keywords to bob_says
