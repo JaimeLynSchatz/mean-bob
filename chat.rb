@@ -45,18 +45,16 @@ while !response.include? "quit" and !response.include? "exit"
 	end
 	
 	if !understood
-		response_words = response.split(" ")
-		print "Oh, '", response_words[-1], "' you say?\n"
+		print "Oh, '", response, "' you say?\n"
 		# add those keywords to bob_says
 	end
 	
 	response = gets.chomp().downcase
-	puts "**** response = #{response} *******" #debugging
 	
 end #while loop
 
 puts "Whatever."
-sleep 3
+sleep 2
 puts "Boring conversation anyway."
 puts
 
