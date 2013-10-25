@@ -32,7 +32,7 @@ end
 
 puts "..."
 response = gets.chomp().downcase
-while !response.include? 'uit' or !response.include? 'xit'
+while !response.include? "quit" and !response.include? "exit"
 
 	if @@bob_says.include? response
 		puts @@bob_says[response]
