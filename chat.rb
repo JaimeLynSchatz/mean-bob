@@ -58,8 +58,8 @@ end #while loop
 
 puts "Whatever."
 puts
-sleep 1.5
+sleep .8
 puts "Boring conversation anyway."
 puts
-sleep 2
+sleep 1.2
 
