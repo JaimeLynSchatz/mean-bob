@@ -10,12 +10,5 @@ module BS
 		"stupid" => "Mama always said, 'Stupid is as stupid does.' \n\nDo you think Sally Field was typecast?"
 	}
 
-	#puts bob_says["chat"]
-	
-	if @@bob_says.include? "Who"
-		puts "Yes, it's there"
-	else
-		puts "No, it's not."
-	end
-
+	puts "Hello there, I'm Bob."
 end
