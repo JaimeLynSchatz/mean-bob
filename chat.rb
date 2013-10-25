@@ -1,4 +1,4 @@
-require_relative bob_says.rb
+require_relative 'bob_says'
 
 
 nasty = [
@@ -42,6 +42,7 @@ while !response.include? 'uit' or !response.include? 'xit'
 		# add those keywords to bob_says
 	
 	response = gets.chomp().downcase
+	end
 	
 end #while loop
 
