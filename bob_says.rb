@@ -5,4 +5,4 @@ bob_says = {
 	"computer" => "Who you callin' 'Computer', chump? This isn't the Enterprise."
 }
 
-puts bob_says["chat"]
+#puts bob_says["chat"]
