@@ -1,3 +1,6 @@
+require_relative bob_says.rb
+
+
 nasty = [
 	"Who you callin' 'Computer', Chump? This isn't the Enterprise.",
 	"Well, why don't you tell me how you really feel."
@@ -5,9 +8,7 @@ nasty = [
 
 computer = "Who you callin' 'Computer', Chump? This isn't the Enterprise. My name is Bob."
 
-puts "..."
-response = gets.chomp()
-while !response.include? 'omputer' or !response.include? 'orry'
+def interrupt_bob(response)
 	puts "Shhh!"
 	sleep 0.5
 	puts "Don't say #{response} now! I'm working here."
@@ -27,28 +28,26 @@ while !response.include? 'omputer' or !response.include? 'orry'
 	print ".\n"
 	sleep 1
 	puts "WHAT DO YOU WANT?"
-	response = gets.chomp()
-	puts "#{response}!?!? Is that all you have to say?"
-	response = gets.chomp()
-	response_words = response.split(" ")
-	print "Oh, ", response_words[-1], " you say?\n"
-	response = gets.chomp()
-	puts "Well, why don't you just tell me how you really feel?"
-	response = gets.chomp()
-	puts "Yeah, yeah, yeah. You didn't think I meant that, did you?"
-	response = gets.chomp()
-	print "What!?!? ", response, "??? Do you kiss your mother with that mouth?\n"
-	puts "I don't think I feel comfortable continuing with this conversation."
-	response = gets.chomp()
-	puts "I'm waiting for an apology."
-	puts "..."
-	response = gets.chomp()
-	if response.include? 'orry'
-		puts "That's better. Boring conversation anyway. I think I'll take a nap."
+end
+
+puts "..."
+response = gets.chomp().downcase
+while !response.include? 'uit' or !response.include? 'xit'
+
+	if bob_says.include? response
+		puts bob_says[response]
 	else
-		puts "I've never been so insulted in my life! Goodbye to you!!"
-	end
+		response_words = response.split(" ")
+		print "Oh, '", response_words[-1], "' you say?\n"
+		# add those keywords to bob_says
+	
+	response = gets.chomp().downcase
 	
 end #while loop
 
-puts computer
+puts "Whatever."
+sleep 3
+puts "Boring conversation anyway."
+puts
+
+
