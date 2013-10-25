@@ -31,7 +31,7 @@ def interrupt_bob(response)
 end
 
 puts "..."
-response = gets.chomp().downcase
+response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 while !response.include? "quit" and !response.include? "exit"
 	
 	understood = false
@@ -49,13 +49,14 @@ while !response.include? "quit" and !response.include? "exit"
 		# add those keywords to bob_says
 	end
 	
-	response = gets.chomp().downcase
+	response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 	
 end #while loop
 
 puts "Whatever."
-sleep 2
+puts
+sleep 1.5
 puts "Boring conversation anyway."
 puts
-
+sleep 2
 
