@@ -32,7 +32,7 @@ end
 
 puts "..."
 response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
-while !response.include? "quit" and !response.include? "exit"
+while !response.include? "exit"
 	
 	understood = false
 	
@@ -47,6 +47,9 @@ while !response.include? "quit" and !response.include? "exit"
 	if !understood
 		print "Oh, '", response, "' you say?\n"
 		# add those keywords to bob_says
+		for word in response_split
+			@@bob_says[word] = response
+		end
 	end
 	
 	response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
