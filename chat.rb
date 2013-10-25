@@ -58,7 +58,12 @@ end #while loop
 
 puts "Whatever."
 puts
-sleep .8
+sleep 0.8
+for phrase in @@bob_says
+	puts "#{phrase}: #{@@bob_says[phrase]}"
+end
+sleep 0.5
+puts
 puts "Boring conversation anyway."
 puts
 sleep 1.2
