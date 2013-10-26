@@ -8,6 +8,11 @@ nasty = [
 
 computer = "Who you callin' 'Computer', Chump? This isn't the Enterprise. My name is Bob."
 
+def new_log(log_filename)
+	log_file = File.open(log_filename, "w")
+	return log_file
+end
+
 def interrupt_bob(response)
 	puts "Shhh!"
 	sleep 0.5
@@ -58,6 +63,9 @@ end #while loop
 
 puts "Whatever."
 puts
+bob_log = new_log("bob_log.txt")
+bob_log.write("module BS\n\n\t")
+
 sleep 0.8
 for phrase in @@bob_says
 	puts "#{phrase}: #{@@bob_says[phrase]}"
