@@ -57,19 +57,27 @@ while !response.include? "exit"
 		end
 	end
 	
-	response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
+	response = gets.chomp().downcase.gsub(/[^a-z\s']/, '')
 	
 end #while loop
 
 puts "Whatever."
 puts
-bob_log = new_log("bob_log.txt")
+bob_log = new_log("bob_log.rb")
 bob_log.write("module BS\n\n\t")
 
 sleep 0.8
 for phrase in @@bob_says
 	puts "#{phrase}: #{@@bob_says[phrase]}"
+	open(bob_log, 'a') { |f|
+		f.print "#{phrase} => #@@bob_says[phrase]}"
+		f.print ",\n"
+	}
 end
+bob_log.write("}\nend")
+
+bob_log.close()
+
 sleep 0.5
 puts
 puts "Boring conversation anyway."
