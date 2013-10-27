@@ -35,26 +35,50 @@ def interrupt_bob(response)
 	puts "WHAT DO YOU WANT?"
 end
 
+VOWELS = "aeiou"
+
 puts "..."
 response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 while !response.include? "exit"
 	
+	# setting up starting variables for conversation
 	understood = false
+	subject_pronoun = "you"
+	object_pronoun = "you"
 	
 	response_split = response.split(" ")
+	
+	if response_split[0..2].include? "you"
+		subject_pronoun == "I"
+	end
+	
 	for word in response_split
+			
 		if @@bob_says.include? word
-			puts @@bob_says[word]
 			understood = true
+			puts @@bob_says[word]
 		end
 	end
 	
 	if !understood
-		print "Oh, '", response, "' you say?\n"
+		print "I don't understand you."
 		# add those keywords to bob_says
-		for word in response_split
-			@@bob_says[word] = response
-		end
+		response_split.reverse_each { |new_word|
+			puts "What does #{new_word} mean?"
+			definition = gets.chomp()
+			if VOWELS.include? new_word
+				article = "an"
+			else
+				article = "a"
+			end
+			puts "So #{article} #{new_word} is #{definition}. Thanks."
+			@@bob_says[new_word] = definition
+		}
+		
+		# I don't think we need this anymore
+		# for word in response_split
+		# 	@@bob_says[word] = response
+		# end
 	end
 	
 	response = gets.chomp().downcase.gsub(/[^a-z\s']/, '')
