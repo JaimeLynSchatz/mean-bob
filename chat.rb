@@ -61,18 +61,23 @@ while !response.include? "exit"
 	end
 	
 	if !understood
-		print "I don't understand you."
+		puts "I don't understand you."
 		# add those keywords to bob_says
 		response_split.reverse_each { |new_word|
-			puts "What does #{new_word} mean?"
+			puts "\nWhat does #{new_word} mean?"
+			puts "Type 'skip' if you don't want to teach me that word right now."
 			definition = gets.chomp()
-			if VOWELS.include? new_word
-				article = "an"
+			if definition == "skip"
+				next
 			else
-				article = "a"
+				if VOWELS.include? new_word
+					article = "an"
+				else
+					article = "a"
+				end
+				puts "So #{article} #{new_word} is #{definition}. Thanks."
+				@@bob_says[new_word] = definition
 			end
-			puts "So #{article} #{new_word} is #{definition}. Thanks."
-			@@bob_says[new_word] = definition
 		}
 		
 		# I don't think we need this anymore
