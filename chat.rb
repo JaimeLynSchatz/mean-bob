@@ -1,11 +1,11 @@
-# script takes one parameter, the name of the log file to send output
+# script takes one parameter, the name of the file to backup to
 
 require_relative 'trial2_rubyfile.rb'
 include BS
 
 # user inputs name of file for log of known words, including 
 # newly learned in this session
-log_filename = ARGV[0]
+backup_file = ARGV[0]
 
 nasty = [
 	"Who you callin' 'Computer', Chump? This isn't the Enterprise.",
@@ -103,7 +103,11 @@ for phrase in @@bob_says
 	puts "#{phrase}: #{@@bob_says[phrase]}"
 end
 
-File.open(log_filename, 'w') { |f|
+# back up the file!
+
+backup_file = File.open(trial2_rubyfile.rb).read()
+
+File.open(trial2_rubyfile.rb, 'w') { |f|
 	output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
 	f.write(output)
 }
