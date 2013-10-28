@@ -1,5 +1,11 @@
+# script takes one parameter, the name of the log file to send output
+
 require_relative 'bob_says'
 include BS
+
+# user inputs name of file for log of known words, including 
+# newly learned in this session
+log_filename = ARGV[0]
 
 nasty = [
 	"Who you callin' 'Computer', Chump? This isn't the Enterprise.",
@@ -38,7 +44,7 @@ end
 VOWELS = "aeiou"
 
 puts "..."
-response = gets.chomp().downcase.gsub(/[^a-z\s]/, '')
+response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 while !response.include? "exit"
 	
 	# setting up starting variables for conversation
@@ -66,7 +72,7 @@ while !response.include? "exit"
 		response_split.reverse_each { |new_word|
 			puts "\nWhat does #{new_word} mean?"
 			puts "Type 'skip' if you don't want to teach me that word right now."
-			definition = gets.chomp()
+			definition = STDIN.gets.chomp()
 			if definition == "skip"
 				next
 			else
@@ -86,26 +92,21 @@ while !response.include? "exit"
 		# end
 	end
 	
-	response = gets.chomp().downcase.gsub(/[^a-z\s']/, '')
+	response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s']/, '')
 	
 end #while loop
 
 puts "Whatever."
 puts
-bob_log = new_log("bob_log.rb")
-bob_log.write("module BS\n\n\t")
-
 sleep 0.8
 for phrase in @@bob_says
 	puts "#{phrase}: #{@@bob_says[phrase]}"
-	open(bob_log, 'a') { |f|
-		f.print "#{phrase} => #@@bob_says[phrase]}"
-		f.print ",\n"
-	}
 end
-bob_log.write("}\nend")
 
-bob_log.close()
+File.open(log_filename, 'w') { |f|
+	output = "module BS\n\n\t@@bob_says = " + @@bob_says.to_s + "puts 'Hello there, I\'m Bob.'\n\nend"
+	f.write(output)
+}
 
 sleep 0.5
 puts
