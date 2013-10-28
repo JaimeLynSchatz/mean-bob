@@ -1,6 +1,6 @@
 # script takes one parameter, the name of the log file to send output
 
-require_relative 'bob_says'
+require_relative 'trial2_rubyfile.rb'
 include BS
 
 # user inputs name of file for log of known words, including 
@@ -104,7 +104,7 @@ for phrase in @@bob_says
 end
 
 File.open(log_filename, 'w') { |f|
-	output = "module BS\n\n\t@@bob_says = " + @@bob_says.to_s + "puts 'Hello there, I\'m Bob.'\n\nend"
+	output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
 	f.write(output)
 }
 
