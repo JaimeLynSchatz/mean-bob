@@ -5,7 +5,8 @@ include BS
 
 # user inputs name of file for log of known words, including 
 # newly learned in this session
-backup_file = ARGV[0]
+input_file = ARGV[0]
+output_file = ARGV[1]
 
 nasty = [
 	"Who you callin' 'Computer', Chump? This isn't the Enterprise.",
@@ -71,9 +72,9 @@ while !response.include? "exit"
 		# add those keywords to bob_says
 		response_split.reverse_each { |new_word|
 			puts "\nWhat does #{new_word} mean?"
-			puts "Type 'skip' if you don't want to teach me that word right now."
+			puts "Type 'later' if you don't want to teach me that word right now."
 			definition = STDIN.gets.chomp()
-			if definition == "skip"
+			if definition == "later"
 				next
 			else
 				if VOWELS.include? new_word
@@ -104,10 +105,10 @@ for phrase in @@bob_says
 end
 
 # back up the file!
+# do we still need this?
+# input_file = File.open(trial2_rubyfile.rb).read()
 
-backup_file = File.open(trial2_rubyfile.rb).read()
-
-File.open(trial2_rubyfile.rb, 'w') { |f|
+File.open(output_file, 'w') { |f|
 	output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
 	f.write(output)
 }
