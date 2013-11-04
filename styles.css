@@ -1,0 +1,26 @@
+body {
+	background-color: #55FF22;
+}
+
+#face {
+	display: block;
+	background-color: #FFFFFF;
+	
+	height: 50%;
+	width: 50%;
+}
+
+#bob_says {
+	display: block;
+	background-color: #FF0000;
+	width: 25px;
+	height: 25px;
+}
+
+#user_says {
+	display: block;
+	background-color: #0000FF;
+	width: 25px;
+	height: 25px;
+}
+	
