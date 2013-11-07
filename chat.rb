@@ -108,10 +108,11 @@ end
 # do we still need this?
 # input_file = File.open(trial2_rubyfile.rb).read()
 
-File.open(output_file, 'w') { |f|
-	output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
-	f.write(output)
-}
+#There's a problem here. I don't know for certain what I did or how to fix it. DOCUMENT!!
+#File.open(output_file, 'w') { |f|
+	#output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
+	#f.write(output)
+#}
 
 sleep 0.5
 puts
