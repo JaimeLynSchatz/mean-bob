@@ -1,7 +1,9 @@
-# script takes one parameter, the name of the file to backup to
+# we're still working out this program's parameters
 
-require_relative 'trial2_rubyfile.rb'
+require_relative 'bob_greeting.rb'
+require_relative 'bob_says.rb'
 include BS
+include Bob_Greeting
 
 # user inputs name of file for log of known words, including 
 # newly learned in this session
