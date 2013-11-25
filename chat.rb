@@ -1,12 +1,14 @@
-# script takes one parameter, the name of the file to backup to
+# we're still working out this program's parameters
 
-require_relative 'trial2_rubyfile.rb'
+require_relative 'bob_greeting.rb'
+require_relative 'bob_says.rb'
 include BS
+include Bob_Greeting
 
 # user inputs name of file for log of known words, including 
 # newly learned in this session
-input_file = ARGV[0]
-output_file = ARGV[1]
+input_file = ARGV[0] || 'default_input_file.rb'
+output_file = ARGV[1] || 'default_output_file.rb'
 
 nasty = [
 	"Who you callin' 'Computer', Chump? This isn't the Enterprise.",
@@ -108,6 +110,7 @@ end
 # do we still need this?
 # input_file = File.open(trial2_rubyfile.rb).read()
 
+#There's a problem here. I don't know for certain what I did or how to fix it. DOCUMENT!!
 File.open(output_file, 'w') { |f|
 	output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
 	f.write(output)
