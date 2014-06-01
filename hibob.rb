@@ -102,6 +102,9 @@ while true
     sleep 0.3
     puts "How will you prepare for such an endeavor?"
     listen
+    type_string("""First, I've starting finding alternative childcare. ADA starts a little too early for moms who need to drop their kiddos off at school.""")
+    type_string("""I'm also investigating alternative funding sources so I can afford to study full time for a year.""")
+    type_string("""The best part of my preparations is imagining being able to spend all day, every day, coding.""") 
     puts "\nIt sounds like you've really thought this through.\n"
     sleep 1.0
     skip_line 1
@@ -111,7 +114,7 @@ while true
     listen
     sleep 0.5
     puts "You're going to make me blush..."
-    sleep 1.0
+    sleep 1.0    
     skip_line 1
     puts "4. What are your professional goals for the next 2 years, the next 5 years?"
     listen
@@ -133,8 +136,9 @@ while true
 	sleep 0.5
 	print "."
 	sleep 0.5
-	print "."
+	print ".\n"
 	
+# "I can't wait to try"	
 end #while loop
 
 # puts "Whatever."
@@ -144,15 +148,16 @@ puts "Those were all the questions!"
 sleep 0.4
 puts "Good luck with your application."
 listen
+skip_line 2
 puts "Don't worry about your video..."
 sleep 0.3
-skip_line 1
+skip_line 3
 puts "   ;)"
-skip_line 1
-sleep 0.5
+skip_line 5
+sleep 0.6
 puts "I think we'll be able to come up with something good."
-sleep 0.3
-skip_line 2
+sleep 0.6
+skip_line 5
 puts "Good night."
 
 # back up the file!
