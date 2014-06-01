@@ -15,6 +15,20 @@ def skip_line(n)
     end
 end
 
+def type_string(str)
+  str.each_char do |c|
+  	if c != " " or c != "." or c != ","
+  	  sleep 0.1
+  	else
+  	  sleep 0.5
+  	end
+  	print c
+  end
+  print "\n"
+end
+
+type_string("Will this print the way I want?")
+
 puts "Hi, I'm Bob."
 sleep 0.3
 puts "And you are...?"
