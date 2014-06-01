@@ -27,6 +27,13 @@ def type_string(str)
   print "\n"
 end
 
+def slow_scroll()
+	10.times do
+		sleep 0.05
+		puts ""
+	end
+end
+
 type_string("Will this print the way I want?")
 
 puts "Hi, I'm Bob."
@@ -150,15 +157,13 @@ puts "Good luck with your application."
 listen
 skip_line 2
 puts "Don't worry about your video..."
-sleep 0.3
-skip_line 3
+slow_scroll
 puts "   ;)"
-skip_line 5
-sleep 0.6
+slow_scroll
+slow_scroll
 puts "I think we'll be able to come up with something good."
-sleep 0.6
-skip_line 5
-puts "Good night."
+slow_scroll
+puts "Good night..."
 
 # back up the file!
 # do we still need this?
