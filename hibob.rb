@@ -4,6 +4,17 @@
 #  but something more controlled and well, scripted.  
 #
 #
+
+def listen()
+	STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
+end
+
+def skip_line(n)
+	n.times do 
+		puts ""
+    end
+end
+
 puts "Hi, I'm Bob."
 sleep 0.3
 puts "And you are...?"
@@ -11,8 +22,7 @@ response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 print "\a"
 sleep 0.3
 print "\a"
-puts ""
-puts ""
+skip_line 2
 puts "WELCOME BACK, JAIME!"
 puts ""
 puts ""
@@ -36,12 +46,10 @@ print "\a\a"
 response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 puts "oh, sorry. I'll be quiet."
 sleep 0.5
-puts ""
-puts ""
+skip_line 2
 response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 sleep 0.3
-puts ""
-puts ""
+skip_line 2
 puts "What would you like to do today?"
 puts "*******************************************************************"
 puts "*                                                                 *"
@@ -55,34 +63,34 @@ puts "*   3. Apply to ADA                                               *"
 puts "*                                                                 *"
 puts "*******************************************************************"
 
-def listen()
-	STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
-end
-
 listen
-puts "You go, girl!"
-puts ""
+skip_line 2
+puts "You go, girl!!"
+skip_line 1
 sleep 0.2
 puts "Ok, first question:"
-
-while !response.include? "exit" or !response.include? "thanks"
+skip_line 1
+while true
 	puts "1. Why are you the best applicant for Ada?"
 	response = listen 
-	print "Ok.\n"
+	skip_line 1
 	sleep 0.3
 	if !response.include? "skip"
 		puts "I knew you had an answer for that one."
 		break
 	end
-	print "We'll come back to that one later.\n"
+	print "Ok."
+	sleep 0.3
+	puts "We'll come back to that one later."
 	sleep 0.4
+    skip_line 2
     puts "2. Taking a year off of work to learn skills for a new career will be difficult"
     sleep 0.3
     puts "How will you prepare for such an endeavor?"
     listen
     puts "\nIt sounds like you've really thought this through.\n"
     sleep 1.0
-    puts ""
+    skip_line 1
     puts "3. Why are you interested in programming?"
     sleep 0.5
     puts "What have you done to expose yourself to programming so far?"
@@ -90,19 +98,20 @@ while !response.include? "exit" or !response.include? "thanks"
     sleep 0.5
     puts "You're going to make me blush..."
     sleep 1.0
-    puts ""
+    skip_line 1
     puts "4. What are your professional goals for the next 2 years, the next 5 years?"
     listen
     puts "Wow."
     sleep 0.5
-    puts ""
+    skip_line 1
     puts "Just don't put me on Jeopardy, ok?."
     listen
     sleep 0.5
     puts "Thanks."
     sleep 1.0
-    puts ""
+    skip_line 1
     puts "5. Tell us about the last time you made a mistake. If you encountered the situation again, what would you do differently?"
+	listen
 	sleep 0.5
 	puts "Now, how about that first question again:"
 	sleep 0.5
@@ -117,9 +126,20 @@ end #while loop
 # puts "Whatever."
 puts
 sleep 0.8
-puts "Good night, Jaime."
+puts "Those were all the questions!"
 sleep 0.4
 puts "Good luck with your application."
+listen
+puts "Don't worry about your video..."
+sleep 0.3
+skip_line 1
+puts "   ;)"
+skip_line 1
+sleep 0.5
+puts "I think we'll be able to come up with something good."
+sleep 0.3
+skip_line 2
+puts "Good night."
 
 # back up the file!
 # do we still need this?
