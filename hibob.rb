@@ -35,12 +35,12 @@ def slow_scroll()
 	end
 end
 
-puts "Hi, I'm Bob."
+puts ">> HI, I AM BOB"
 sleep 0.2
-puts "And you are...?"
+puts ">> AND YOU ARE...?"
 response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
 skip_line 2
-puts "WELCOME BACK, JAIME!"
+puts ">> WELCOME BACK, JAIME!"
 puts ""
 puts ""
 puts "            **         **            "
@@ -57,17 +57,17 @@ puts "            *             *          "
 puts "             * * * * * * *           "     
 puts ""
 puts ""
-puts "I missed you!"
+puts ">> I MISSED YOU!"
 listen
 sleep 0.5
 skip_line 2
-puts "What would you like to do today?"
+puts ">> WHAT WOULD YOU LIKE TO DO TODAY?"
 puts "*******************************************************************"
 puts "*                                                                 *"
 puts "*   1. Play a game                                                *"
 puts "*                                                                 *"
 sleep 0.2
-puts "*   2. SHUT DOWN ALL THE GARBAGE MASHERS ON THE DETENTION LEVEL!   *"
+puts "*   2. SHUT DOWN ALL THE GARBAGE MASHERS ON THE DETENTION LEVEL!  *"
 puts "*                                                                 *"
 sleep 0.2
 puts "*   3. Apply to ADA                                               *"
@@ -76,13 +76,15 @@ puts "*******************************************************************"
 
 listen
 skip_line 2
-puts "You go, girl!!"
+puts ">> YOU GO, GIRL!!"
 skip_line 1
 sleep 0.2
-puts "Ok, first question:"
+puts ">> OK, FIRST QUESTION:"
 skip_line 1
 while true
+             puts "*****************************************"
 	puts "1. Why are you the best applicant for Ada?"
+             puts "*****************************************"
 	response = listen 
 	skip_line 1
 	sleep 0.2
@@ -102,17 +104,19 @@ while true
             type_string("""ADA will help me do that.""")
 	     sleep 0.3
             skip_line 1
-            puts "I knew you had an answer for that one."
+            puts ">> I KNEW YOU HAD AN ANSWER FOR THAT ONE."
 	     break
 	end
-	print "Ok."
+	print ">> OK."
 	sleep 0.2
-	puts "We'll come back to that one later."
+	puts ">> WE'LL COME BACK TO THAT ONE LATER."
 	sleep 0.3
     skip_line 2
+    puts "***********************************************************************"
     puts "2. Taking a year off of work to learn skills for a new career will be difficult"
     sleep 0.2
     puts "How will you prepare for such an endeavor?"
+    puts "***********************************************************************"
     listen
     type_string("""First, I've started finding alternative childcare. ADA starts a little too early for moms who need to drop their kiddos off at school.""")
     sleep 0.5
@@ -122,12 +126,14 @@ while true
     sleep 0.8
     type_string("""It's like a dream.""")
     sleep 0.2
-    puts "\nYou know you're always going to come back to me at night, though, right?\n"
+    puts "\n>> YOU KNOW YOU'RE ALWAYS GOING TO COME BACK TO ME AT NIGHT, RIGHT?\n"
     listen
     skip_line 1
+    puts "***********************************************************************"
     puts "3. Why are you interested in programming?"
     sleep 0.2
     puts "What have you done to expose yourself to programming so far?"
+    puts "***********************************************************************"
     sleep 0.3
     type_string("""I can't remember a time when I wasn't obsessed with software and tech. I just didn't know that's what it was.""")
     sleep 0.2
@@ -143,35 +149,39 @@ while true
     sleep 0.4
     type_string("""And I have been working on you, Bob. :) I'm rather fond of you.""")
     sleep 0.3
-    puts "Aw, shucks. You're going to make me blush..."
+    puts ">> AW, SHUCKS. YOU'RE GOING TO MAKE ME BLUSH..."
     sleep 1.0    
     skip_line 1
-    puts "Ahem"
+    puts ">> <<ahem>>"
     sleep 0.5
+    puts "***********************************************************************"
     puts "4. What are your professional goals for the next 2 years, the next 5 years?"
+    puts "***********************************************************************"
     sleep 0.3
     type_string("""Within the next two years, I want to make my living building software. Within the next five, I would like to help build the next great AI. Maybe get you up to Watson's level...?""")
     skip_line 1
     sleep 0.3
-    puts "Wow."
+    puts ">> WOW."
     sleep 0.3
     skip_line 1
-    puts "Just don't put me on Jeopardy, ok?."
+    puts ">> JUST DON'T PUT ME ON JEOPARDY, OK?"
     listen
     sleep 0.3
-    puts "Thanks."
+    puts ">> THANKS."
     sleep 0.8
     skip_line 1
+    puts "*******************************************************************************************************************"
     puts "5. Tell me about the last time you made a mistake. If you encountered the situation again, what would you do differently?"
+    puts "*******************************************************************************************************************"
     sleep 0.2
     type_string("""Like everybody, I make mistakes all the time. The mistake that I think about every day, though, was a mistake made out of fear. My fear kept me from clicking `Apply Now` on the old ADA website. If I had been brave and taken the risk, I would have seen it and gotten my app in on time. And I might have been selected. """)
     sleep 0.3
     type_string("""Now, I take risks. Taking risks is why I applied for the Gnome Outreach Project and am now interning with Wikimedia. And taking risks is why I'm applying for ADA today. """)
     skip_line 1
     sleep 0.5
-    type_string("""And I triple check deadlines! :D""")
+    type_string("""And I ***triple*** check deadlines! :D""")
     sleep 0.3
-    puts "Now, how about that first question again:"
+    puts ">> NOW, ABOUT THAT FIRST QUESTION AGAIN:"
     sleep 0.3
     print "."
     sleep 0.3
@@ -183,27 +193,30 @@ end #while loop
 
 puts
 sleep 0.8
-puts "You did it! Those were all the questions!"
+puts ">> YOU DID IT! THOSE WERE ALL THE QUESTIONS!"
 sleep 0.4
-puts "Good luck with your application."
+puts ">> GOOD LUCK WITH YOUR APPLICATION."
 listen
 skip_line 2
-puts "Oh, don't worry too much about your video..."
+puts ">> OH, DON'T WORRY TOO MUCH ABOUT YOUR VIDEO..."
 skip_line 3
 sleep 0.8
 puts "   ;)"
 skip_line 5
-puts "I think we'll be able to come up with something good."
+puts ">> I THINK WE'LL BE ABLE TO COME UP WITH SOMETHING GOOD."
 skip_line 2
 listen
-puts "Good night..."
+puts ">> GOOD NIGHT..."
 skip_line 1
 print "jaimelyn@jaimelyn-Aspire-5742:~/projects/mean-bob$ "
 sleep 0.3
 print "curl -v -X POST 'https://youtube.com/service/api/upload?' filename='conversation.mpg'"
 skip_line 1
 puts "$: password: (hidden text) "
-puts "please wait"
-sleep 2
+print "please wait"
+6.times do 
+    sleep 0.2
+    print "."
+end
+skip_line 1
 puts "Success!"
-puts 
