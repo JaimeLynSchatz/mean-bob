@@ -107,7 +107,7 @@ while true
         sleep 0.5  
         type_string("""I'm not **the** best applicant.""")
         sleep 0.3
-        type_string("""Seattle is positively brimmming with brilliant women who will make great software develpers. """)
+        type_string("""Seattle is positively brimmming with brilliant women who will make great software developers. """)
         type_string("""But there's no-one out there who wants it more than I.""")
         type_string("""And there's no-one who will work harder. I want to make my kids proud when they answer 'what does your mom do?'""")
         type_string("""Ada will help me do that.""")
@@ -153,6 +153,7 @@ while true
     type_string("""For a couple of years now, I've been studying on Codecademy and Udacity and the public parts of the ADA curriculum and everything else I can get my hands on.""")
     type_string("""I've been helping Cheri and GDI Seattle with their summer study group sessions. I've also just started my OPW internship.""")
     type_string("""And I have been working on you, Bob. :) I'm rather fond of you.""")
+    listen
     puts ">> AW, SHUCKS. YOU'RE GOING TO MAKE ME BLUSH..."
     sleep 1.0    
     skip_line 1
@@ -163,7 +164,7 @@ while true
     puts "*************************************************************************"
     listen
     type_string("""Within the next two years, I want to make my living building software. Within the next five, I would like to at least *help* build the next great AI. Maybe get you up to Watson's level?""")
-    type_string("""I've got big plans for you, Bob.""")
+    listen
     puts ">> WOW."
     sleep 0.3
     skip_line 1
