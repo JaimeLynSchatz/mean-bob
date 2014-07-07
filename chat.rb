@@ -58,10 +58,10 @@ while !response.include? "exit"
 	response_split = response.split(" ")
 	
 	if response_split[0..2].include? "you"
-		subject_pronoun == "I"
+		subject_pronoun = "I"
 	end
 	
-	for word in response_split
+	response_split.each do |word|
 			
 		if @@bob_says.include? word
 			understood = true
