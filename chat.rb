@@ -63,9 +63,9 @@ while !response.include? "exit"
 	
 	response_split.each do |word|
 			
-		if @@bob_says.include? word
+		if @bob_says.include? word
 			understood = true
-			puts @@bob_says[word]
+			puts @bob_says[word]
 		end
 	end
 	
@@ -85,7 +85,7 @@ while !response.include? "exit"
 					article = "a"
 				end
 				puts "So #{article} #{new_word} is #{definition}. Thanks."
-				@@bob_says[new_word] = definition
+				@bob_says[new_word] = definition
 			end
 		}
 		
@@ -102,8 +102,8 @@ end #while loop
 puts "Whatever."
 puts
 sleep 0.8
-for phrase in @@bob_says
-	puts "#{phrase}: #{@@bob_says[phrase]}"
+for phrase in @bob_says
+	puts "#{phrase}: #{@bob_says[phrase]}"
 end
 
 # back up the file!
@@ -112,7 +112,7 @@ end
 
 #There's a problem here. I don't know for certain what I did or how to fix it. DOCUMENT!!
 File.open(output_file, 'w') { |f|
-	output = "module BS\n\n\t@@bob_says =\n" + @@bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
+	output = "module BS\n\n\t@bob_says =\n" + @bob_says.to_s + "\n\nputs 'Hello there, I\\'m Bob.'\n\nend"
 	f.write(output)
 }
 
