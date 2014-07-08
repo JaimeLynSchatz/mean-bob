@@ -62,7 +62,8 @@ while !response.include? "exit"
 	end
 	
 	response_split.each do |word|
-			
+		puts "Bob_says has #{@bob_says}"
+				
 		if @bob_says.include? word
 			understood = true
 			puts @bob_says[word]
