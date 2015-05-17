@@ -38,11 +38,12 @@ puts "Hi, I'm Bob."
 sleep 0.2
 puts "And you are...?"
 response = STDIN.gets.chomp().downcase.gsub(/[^a-z\s]/, '')
-skip_line 2
-puts "WELCOME BACK, JAIME!"
-puts ""
-puts ""
-puts "            **         **            "
+if response == "Jaime" || "jaime" || "me"
+  skip_line 2
+  puts "WELCOME BACK, JAIME!"
+  puts ""
+  puts ""
+  puts "            **         **            "
 puts "           *   *      *   *          "
 puts "           * * *      * * *          "
 puts "           *   *      *   *          "
