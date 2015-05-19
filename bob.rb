@@ -156,4 +156,7 @@ if response == "Jaime" || "jaime" || "me"
 else
   puts "What up, Chloe!!!"
   listen
-  
+  puts "Would you like to play Pico Fermi Bagels?"
+  response = listen
+end
+
